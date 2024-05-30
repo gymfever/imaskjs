@@ -1,10 +1,10 @@
 {
   "name": "angular-imask",
-  "author": "Alexey Kryazhev",
+  "author": "Gfit",
   "license": "MIT",
   "version": "6.0.5",
-  "description": "Angular IMask Plugin",
-  "repository": "https://github.com/uNmAnNeR/imaskjs/tree/master/packages/angular-imask",
+  "description": "Angular IMask Plugin Fork",
+  "repository": "https://github.com/gymfever/imaskjs/tree/main/packages/angular-imask",
   "scripts": {
     "build": "ng-packagr --config tsconfig.json",
     "dev": "ng build angular-imask --watch",
