@@ -33,6 +33,7 @@ export class IMaskDirective<Opts extends import('imask').default.AnyMaskedOption
   private _composing: boolean;
   private _writingValue: any;
   private _writing: boolean;
+  private _initialValue;
 
   @Input() imask?: Opts;
   @Input() unmask?: boolean|'typed';
@@ -142,6 +143,7 @@ export class IMaskDirective<Opts extends import('imask').default.AnyMaskedOption
       }
     } else {
       this._renderer.setProperty(this.element, 'value', value);
+      this._initialValue = value;
     }
   }
 
@@ -162,6 +164,9 @@ export class IMaskDirective<Opts extends import('imask').default.AnyMaskedOption
     this.maskRef = this._factory.create(this.element, this.imask as Opts)
       .on('accept', this._onAccept.bind(this))
       .on('complete', this._onComplete.bind(this));
+
+      if (this._initialValue != null) this.writeValue(this._initialValue);
+      delete this._initialValue;
   }
 
   setDisabledState (isDisabled: boolean) {
