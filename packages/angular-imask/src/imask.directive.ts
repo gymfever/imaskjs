@@ -33,7 +33,7 @@ export class IMaskDirective<Opts extends import('imask').default.AnyMaskedOption
   private _composing: boolean;
   private _writingValue: any;
   private _writing: boolean;
-  private _initialValue;
+  private _initialValue: any;
 
   @Input() imask?: Opts;
   @Input() unmask?: boolean|'typed';
